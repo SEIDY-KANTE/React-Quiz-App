@@ -1,11 +1,12 @@
-function NexButton({ dispatch }) {
+import Button  from "./Button";
+
+function NexButton({ dispatch, numQuestions, index }) {
+  const isFinish = numQuestions === index + 1;
+
   return (
-    <button
-      className="btn btn-ui"
-      onClick={() => dispatch({ type: "nextQuestion" })}
-    >
-      Next
-    </button>
+    <Button dispatch={dispatch} type={isFinish ? "finish" : "nextQuestion"}>
+      {isFinish ? "Finish" : "Next"}
+    </Button>
   );
 }
 
