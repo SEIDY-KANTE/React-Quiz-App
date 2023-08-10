@@ -1,8 +1,5 @@
-import { useQuiz } from "../context/QuizContext";
-
-function Options({ question }) {
-  const { dispatch, answer } = useQuiz();
-
+function Options({ question, dispatch, answer }) {
+  //console.log(answer);
   const hasAnswered = answer !== null;
   return (
     <div className="options">
@@ -12,9 +9,7 @@ function Options({ question }) {
             hasAnswered
               ? question.correctOption === index
                 ? "correct"
-                : index === answer
-                ? "false"
-                : "wrong"
+                : index===answer ? "false":"wrong"
               : ""
           }`}
           key={option}

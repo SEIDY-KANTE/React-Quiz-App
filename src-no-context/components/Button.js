@@ -1,8 +1,4 @@
-import { useQuiz } from "../context/QuizContext";
-
-function Button({ children, type }) {
-  const { dispatch } = useQuiz();
-
+function Button({ children, dispatch, type }) {
   return (
     <button className="btn btn-ui" onClick={() => dispatch({ type: type })}>
       {children}
